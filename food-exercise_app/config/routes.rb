@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  #home page
+  get '/', to: 'users#home', as: 'home'
+
 ###sessions
   get '/sign_in', to: 'sessions#new'
 
