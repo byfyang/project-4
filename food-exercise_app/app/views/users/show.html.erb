@@ -1,0 +1,14 @@
+<div>
+  Welcome, <%= @user.first_name %> <%=@user.last_name%>
+
+  <p>Age: <%=@user.age%></p>
+   <p>Gender: <%=@user.gender%></p>
+    <p>Weight: <%=@user.weight%></p>
+     <p>Height: <%=@user.height%></p>
+
+    <div class = "button">
+      <%= button_to "Edit Profile", edit_user_path, :method => :get %>
+    </div>
+
+
+</div>
