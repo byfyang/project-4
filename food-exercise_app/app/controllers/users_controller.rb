@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
-
-	def home
-		render :home
-	end
-
 	def user_params
 	  params.require(:user).permit(:first_name, :last_name, :gender, :weight, :email, :password, :height, :age)
 	end
 
+	###home###
+	def home
+		render :home
+	end
+
+	###user index###
 	def index
 		@users = User.all
 		render :index
@@ -47,8 +48,5 @@ class UsersController < ApplicationController
 			render :edit
 		end
 	end
-
-
-
 
 end

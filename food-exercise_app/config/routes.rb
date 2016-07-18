@@ -21,6 +21,12 @@ Rails.application.routes.draw do
   patch '/users/:id/edit', to: 'users#update'
 
 
+###search###
+  get '/food/search', to: 'search#search'
+
+  post '/food/search', to: 'search#result'
+
+
   resources :users, :exercises
 
 
