@@ -5,32 +5,53 @@
 <% end %>
 
 
+ <!-- all of this inside a form -->
 
 <div>
-	<% if @result_array%>
-		<% @result_array.each do |r| %>
-			<input type='radio' name='food' value='food_name'>
-			<%=r['fields']['brand_name']%>
-			<%=r['fields']['item_name'] %>
-			<%=r['fields']['nf_calories']%>
-			<%=r['fields']['nf_serving_size_qty']%>
-			</input>
-		<br>
-			<%end%>
+<% if @result_array%>
+	<%= form_tag(method: 'get') do %>
+	<% @result_array.each do |food| %>
+		<%=radio_button :food, "id", food["_id"], checked: false, id: food["_id"] %>
+		<%=label :food, food["fields"]["item_name"], for: food["_id"] %>
+	<br>
+	<%end%>
+		
+	<%= submit_tag "Choose Your Exercises" %>
 	<%end%>
 	
+<%end%>
 </div>
 
 
-<div>
-	<p>Exercises</p>
-	<li>Running
 
-	</li>
-	<li>Walking
 
-	</li>
-	<li>Swimming
+<!-- Modal Trigger -->
+<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
-	</li>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+
+		<div>
+		<p>Exercises</p>
+		<li>Running
+		<p></p>
+
+		</li>
+		<li>Walking
+
+		</li>
+		<li>Swimming
+
+		</li>
+		</div>
+
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
 </div>
+
+
+        
