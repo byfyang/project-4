@@ -7,8 +7,30 @@
 
 
 <div>
-<% if @name  && @calories%>
-<%=@name %>
-<%=@calories%>
-<%end%>	
+	<% if @result_array%>
+		<% @result_array.each do |r| %>
+			<input type='radio' name='food' value='food_name'>
+			<%=r['fields']['brand_name']%>
+			<%=r['fields']['item_name'] %>
+			<%=r['fields']['nf_calories']%>
+			<%=r['fields']['nf_serving_size_qty']%>
+			</input>
+		<br>
+			<%end%>
+	<%end%>
+	
+</div>
+
+
+<div>
+	<p>Exercises</p>
+	<li>Running
+
+	</li>
+	<li>Walking
+
+	</li>
+	<li>Swimming
+
+	</li>
 </div>
