@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   get '/food/exercise_form', to: 'search#exercise_form'
 
+  post '/food/exercise_form', to: 'search#food_exercise_save'
+
 
   resources :users, :exercises
 
