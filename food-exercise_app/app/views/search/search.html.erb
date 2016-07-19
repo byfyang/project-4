@@ -9,49 +9,21 @@
 
 <div>
 <% if @result_array%>
-	<%= form_tag(method: 'get') do %>
-	<% @result_array.each do |food| %>
-		<%=radio_button :food, "id", food["_id"], checked: false, id: food["_id"] %>
-		<%=label :food, food["fields"]["item_name"], for: food["_id"] %>
-	<br>
-	<%end%>
+	<%= form_tag('/food/exercise_form', method: 'get') do %>
+		<% @result_array.each do |food| %>
+			<%= radio_button :food, "search", food["fields"]["item_name"] + "cals" + food['fields']['nf_calories'].to_s, checked: false, id: food["_id"] %>
+			<%=label :brand, food["fields"]["brand_name"], for: food["_id"]  %>
+			<%=label :food, food["fields"]["item_name"], for: food["_id"] %>
+			<%=label :calories, food["fields"]['nf_calories'].to_s + ' ' + 'calories', for: food["_id"] %>
+		<br>
+		<%end%>
 		
-	<%= submit_tag "Choose Your Exercises" %>
+		<%= submit_tag "Pick Your Exercise" %>
 	<%end%>
 	
 <%end%>
 </div>
 
-
-
-
-<!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-<!-- Modal Structure -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4>Modal Header</h4>
-
-		<div>
-		<p>Exercises</p>
-		<li>Running
-		<p></p>
-
-		</li>
-		<li>Walking
-
-		</li>
-		<li>Swimming
-
-		</li>
-		</div>
-
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
-</div>
 
 
         

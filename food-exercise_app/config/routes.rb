@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   post '/food/search', to: 'search#result'
 
-  post '/food/save', to: 'search#save'
+  get '/food/exercise_form', to: 'search#exercise_form'
 
 
   resources :users, :exercises
