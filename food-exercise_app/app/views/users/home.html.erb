@@ -1,3 +1,18 @@
+<h1>Eat Your Way to Paradise</h1>
+<div>
+<ul>
+  <% if current_user != nil %>
+    <li><%= link_to "Profile", user_path(current_user)%>
+    <li><%= link_to "Food", '/food/search' %>
+    <li><%= link_to "Logout", '/sessions', method: :delete %></li>
+  <% else %>
 
+	<p class="z-depth-5">You know what's the hardest part of eating? Figuring out how much you want to exercise? I mean who loves exercise? So OVERRATED.</p>
+	<br>
+	<p class="z-depth-5">Sign-Up or Log-in and we'll help you figure it out ^_^V</p>
 
-<%= link_to 'Sign Up', new_user_path(@user)%> <%= link_to "Login", '/sign_in'%>
+	<%end%>
+</ul>
+
+</div>
+

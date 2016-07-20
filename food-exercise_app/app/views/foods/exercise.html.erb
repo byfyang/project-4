@@ -1,0 +1,46 @@
+<h1> Pick Your Exercise </h1>
+
+	<p>Food: <%=@name%></p> 
+	<p>Calories: <%=@calories%></p>
+
+<div>
+	<div>
+	<li>Running
+	<p>Time: <%=@time_running.round%> mins</p>
+	<%= form_tag('/food/exercise_form', method: 'post') do %>
+		<%= text_field_tag "food[name]", @name, hidden: true %> 
+		<%= text_field_tag "food[calories]", @calories, hidden: true %> 
+		<%= text_field_tag "food[exercise]", @exercise ="running", hidden: true %> 
+		<%= text_field_tag "food[time]", @time_running, hidden: true %> 
+	<%= submit_tag "Add"%>
+	<%end%>
+	</li>
+	</div>
+
+	<div>
+	<li>Walking
+	<p>Time: <%=@time_walking.round%> mins</p>
+	<%= form_tag('/food/exercise_form', method: 'post') do %>
+		<%= text_field_tag "food[name]", @name, hidden: true %> 
+		<%= text_field_tag "food[calories]", @calories, hidden: true %> 
+		<%= text_field_tag "food[exercise]", @exercise = "walking", hidden: true %> 
+		<%= text_field_tag "food[time]", @time_walking, hidden: true %> 
+	<%= submit_tag "Add"%>
+	<%end%>
+	</li>
+	</div>
+
+	<div>
+	<li>Swimming
+	<p>Time: <%=@time_swimming.round%> mins</p>
+	<%= form_tag('/food/exercise_form', method: 'post') do %>
+		<%= text_field_tag "food[name]", @name, hidden: true %> 
+		<%= text_field_tag "food[calories]", @calories, hidden: true %> 
+		<%= text_field_tag "food[exercise]", @exercise = "swimming", hidden: true %> 
+		<%= text_field_tag "food[time]", @time_swimming, hidden: true %> 
+	<%= submit_tag "Add"%>
+	<%end%>
+	</li>
+	</div>
+
+</div>

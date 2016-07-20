@@ -1,14 +1,14 @@
-<div>
-  Welcome, <%= @user.first_name %> <%=@user.last_name%>
+<div id="user_show">
+  <h3>Welcome, <%= @user.first_name %> <%=@user.last_name%></h3>
 
   <p>Age: <%=@user.age%></p>
    <p>Gender: <%=@user.gender%></p>
-    <p>Weight: <%=@user.weight%></p>
-     <p>Height: <%=@user.height%></p>
+    <p>Weight: <%=@user.weight%> lbs</p>
+     <p>Height: <%=@user.height%> in</p>
 
     <div class = "button">
-      <%= button_to "Edit Profile", edit_user_path, :method => :get %>
+      <a class="waves-effect waves-light btn">
+      <%= button_to "Edit Profile", edit_user_path, :method => :get %></a>
     </div>
-
 
 </div>

@@ -22,17 +22,15 @@ Rails.application.routes.draw do
 
 
 ###search###
-  get '/food/search', to: 'search#search'
+  get '/food/search', to: 'foods#search_page'
 
-  post '/food/search', to: 'search#result'
+  post '/food/search', to: 'foods#search_result'
 
-  get '/food/exercise_form', to: 'search#exercise_form'
+  get '/food/exercise_form', to: 'foods#calculate_calories'
 
-  post '/food/exercise_form', to: 'search#food_exercise_save'
+  post '/food/exercise_form', to: 'foods#create', as: 'new_food'
 
 
   resources :users, :exercises
-
-
 
 end
