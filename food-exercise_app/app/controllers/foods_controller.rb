@@ -1,9 +1,10 @@
 class FoodsController < ApplicationController
-
+	
 	def search_page
 		render :search
 	end
 
+	###API usage###
 	def search_result
 		user_search = params[:search]
 
@@ -14,6 +15,7 @@ class FoodsController < ApplicationController
 		render :search
 	end
 
+	###pass selected food params and calculate time needed to burn calories###
 	def calculate_calories
 		selected_food = params['food']['search']
 		foodName = selected_food.split('cals').first
@@ -21,13 +23,12 @@ class FoodsController < ApplicationController
 		foodCal = selected_food.split('cals').last
 		@calories = foodCal
 
+		###distinguish between female/male###
 		if current_user.gender = 'male'
 		@time_running = foodCal.to_f * 4.184 / ( (current_user.age * 0.2017) - (current_user.weight * 0.09036) + (148 * 0.6309) - 55.0969 )
 		
-
 		@time_walking = foodCal.to_f / 5 / (150 * 0.45392) * 60
 		
-
 		@time_swimming = foodCal.to_f / 9.8 / (150 * 0.45392) * 60
 		
 			elsif current_user.gender ='female'
@@ -39,13 +40,11 @@ class FoodsController < ApplicationController
 
 				@time_swimming = foodCal.to_f / 9.8 / (150 * 0.45392) * 60
 				# p @time_swimming
-			
 		end
-
 		render :exercise
-
 	end
 
+	###create food and associate with user###
 	def create
 		 food_params = params.require(:food).permit(:name, :exercise, :calories, :time)
 		 food = Food.create(food_params)

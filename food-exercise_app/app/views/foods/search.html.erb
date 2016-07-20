@@ -1,3 +1,5 @@
+<h3>What's Your Heart's Desire?</h3>
+
 <div id='search_page'>
 <%= form_tag( method: 'get') do %>
 <%= text_field_tag :search, params[:search], placeholder: "What's your Desire?" %>
@@ -6,21 +8,23 @@
 <% end %>
 </div>
 
-
-<div>
+<br>
+<div class="center-align" id="search_results">
 <% if @result_array%>
 	<%= form_tag('/food/exercise_form', method: 'get') do %>
 		<% @result_array.each do |food| %>
+			<p>
 			<%= radio_button :food, "search", food["fields"]["item_name"] + "cals" + food['fields']['nf_calories'].to_s, checked: false, id: food["_id"] %>
 			<%=label :brand, food["fields"]["brand_name"], for: food["_id"]  %>
 			<%=label :food, food["fields"]["item_name"], for: food["_id"] %>
 			<%=label :calories, food["fields"]['nf_calories'].to_s + ' ' + 'calories', for: food["_id"] %>
-		<br>
+			</p>
 		<%end%>
-		
+		<br>
+		<div class="waves-effect waves-light btn ">
 		<%= submit_tag "Pick Your Exercise" %>
+		</div>
 	<%end%>
-	
 <%end%>
 </div>
 

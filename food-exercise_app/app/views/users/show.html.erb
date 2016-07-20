@@ -1,27 +1,48 @@
-<div id="user_show">
-  <h3>Welcome, <%= @user.first_name %> <%=@user.last_name%></h3>
+<div>
+  
+<h3>Welcome, <%= @user.first_name %> <%=@user.last_name%></h3>
 
-  <p>Age: <%=@user.age%></p>
-   <p>Gender: <%=@user.gender%></p>
-    <p>Weight: <%=@user.weight%> lbs</p>
-     <p>Height: <%=@user.height%> in</p>
+ <div class = 'row'>
+  <div id="user_show" class = "col s6">
+    <img class = 'image' src="<%= @user.image_url %>" alt="image for user" width='200px'>
+      <div class = "button">
+        <a class="waves-effect waves-light btn">
+        <%= button_to "Edit Profile", edit_user_path, :method => :get %></a>
+      </div>
+  </div>
 
-    <div class = "button">
-      <a class="waves-effect waves-light btn">
-      <%= button_to "Edit Profile", edit_user_path, :method => :get %></a>
-    </div>
-
-    <div>
-    	<p>Your Creations</p>
-    	<li>
-    		<% @foods.each do |food| %>
-    		<p><%= food.name %></p>
-    		<p><%= food.exercise %> </p>
-    		<p><%= food.time %> mins</p>
-    		<p><%= food.calories%> cals</p>
-    		<%end%>
-    	</li>
-
+    <div class="col s6">
+      <p>Age: <%=@user.age%></p>
+      <p>Gender: <%=@user.gender%></p>
+      <p>Weight: <%=@user.weight%> lbs</p>
+      <p>Height: <%=@user.height%> in</p>
     </div>
 
 </div>
+
+<div id="food">
+  <h5 id='creation'>Your Creations</h5>
+  <table class='striped z-depth-5'>
+    <thead>
+      <tr>
+          <th data-field="id">Name</th>
+          <th data-field="Exercise">Exercise</th>
+          <th data-field="Calories">Calories</th>
+          <th data-field="Time">Mins</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.exercise %></td>
+        <td><%= food.calories%> </td>
+        <td><%= food.time %> </td>
+      </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<br>

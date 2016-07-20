@@ -1,38 +1,54 @@
 <h3>Edit Profile</h3>
+<div>
+  <div class='row'>  
+    <%= form_for @user, url: user_path(@user), method: :patch do |f| %>
 
-  <div>
-  	<%= form_for @user, url: user_path(@user), method: :patch do |f| %>
+    <div class="input-field col s6">First Name:
+    <%= f.text_field :first_name, placeholder: "First Name" %> 
+    </div>
 
-  	<div>
-  	<%= f.text_field :first_name, placeholder: "First Name" %> <%= f.text_field :last_name, placeholder: "Last Name" %>
-  	</div>
-  	
-    <div>
-  	<%= f.text_field :email, placeholder: "Email" %> 
-  	</div>
+    <div class="input-field col s6">Last Name:
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
+    </div>
+    
+    <div class="input-field col s12">Email:
+    <%= f.text_field :email, placeholder: "Email" %> 
+    </div>
 
-  	<div>
-  	  <%= f.password_field :password, placeholder: "Password" %> <%= f.password_field :confirm_password, placeholder: "Confirm Password" %>
-  	</div>
+    <div class="input-field col s6">Change Your Password
+      <%= f.password_field :password, placeholder: "Password" %> 
+    </div>Confirm Password:
+    <div class="input-field col s6">  
+      <%= f.password_field :confirm_password, placeholder: "Confirm Password" %>
+    </div>
 
-
-    <div>
+    <div class="input-field col s6">Gender:
       <%= f.text_field :gender, placeholder: "Gender" %>
     </div>
 
-  	<div>
-  	  <%= f.text_field :age, placeholder: "Age" %>
-  	</div>
+    <div class="input-field col s6">Age:
+      <%= f.text_field :age, placeholder: "Age" %>
+    </div>
 
-  	<div>
-  	  <%= f.text_field :height, placeholder: "Height" %>
-  	</div>
+    <div class="input-field col s6">Height (inches):
+      <%= f.text_field :height, placeholder: "Height" %>
+    </div class="input-field col s6">
 
-  	<div>
-  	  <%= f.text_field :weight, placeholder: "Weight" %>
-  	</div>
+    <div class="input-field col s6">Weight (lbs):
+      <%= f.text_field :weight, placeholder: "Weight" %>
+    </div>
 
+    <div class="col s12" >Picture:
+      <%= f.hidden_field :image_url, role: "uploadcare-uploader" %>
+      <input type="submit" value="Upload Picture" hidden='true'>
+    </div>
+    <br>
+    <br>
 
-  	<%= f.submit "Update Profile" %>
-  	<%end%>
+    <div class="waves-effect waves-light btn">
+      <%= f.submit "Update Profile" %>
+    </div>
+
+    <%end%>
   </div>
+</div>

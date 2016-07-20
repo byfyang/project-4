@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	def user_params
-	  params.require(:user).permit(:first_name, :last_name, :gender, :weight, :email, :password, :height, :age)
+	  params.require(:user).permit(:first_name, :last_name, :gender, :weight, :email, :password, :height, :age, :image_url)
 	end
 
 	###home###
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-	  user_params = params.require(:user).permit(:first_name, :last_name, :email, :password)
+	  user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :image_url)
 	  @user = User.create(user_params)
 	  login(@user)
 
