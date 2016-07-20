@@ -11,4 +11,17 @@
       <%= button_to "Edit Profile", edit_user_path, :method => :get %></a>
     </div>
 
+    <div>
+    	<p>Your Creations</p>
+    	<li>
+    		<% @foods.each do |food| %>
+    		<p><%= food.name %></p>
+    		<p><%= food.exercise %> </p>
+    		<p><%= food.time %> mins</p>
+    		<p><%= food.calories%> cals</p>
+    		<%end%>
+    	</li>
+
+    </div>
+
 </div>

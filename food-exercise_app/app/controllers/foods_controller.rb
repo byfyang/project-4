@@ -48,11 +48,11 @@ class FoodsController < ApplicationController
 
 	def create
 		 food_params = params.require(:food).permit(:name, :exercise, :calories, :time)
-		 @food = Food.create(food_params)
-		 if @food.save
+		 food = Food.create(food_params)
+		 current_user.foods << food
+		 if food.save
 		 	redirect_to "/users/#{current_user.id}"
 		 end
-
 	end
 
 
