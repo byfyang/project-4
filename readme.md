@@ -19,7 +19,7 @@ We'll have 2 models: users and foods. User has a one to many relationship with f
 * Rails/Ruby
 
 ##Planning
-[Trello] 
+[Trello] https://trello.com/b/dL4THO2t/working-for-food#
 
 [Schedule/Milestones] 
 
