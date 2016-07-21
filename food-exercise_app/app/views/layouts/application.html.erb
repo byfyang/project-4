@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FoodExerciseApp</title>
+     
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <script src="https://ucarecdn.com/widget/2.9.0/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
+  <script>
+    UPLOADCARE_PUBLIC_KEY = 'c8003a1d7e7b2eb812ff';
+  </script>
+  <%= csrf_meta_tags %>
+
+	
+  <!--Import Google Icon Font-->
+   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+
+	<%= render 'partial/nav' %>
+	<%= yield %>
+
+</body>
+
+</html>

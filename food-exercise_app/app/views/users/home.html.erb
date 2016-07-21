@@ -1,0 +1,87 @@
+
+
+<div id="picture">
+  <br>
+  <h1 class="header center" id='font_color2'>Know What You Eat</h1>
+  <div class="row center">
+    <h5 class="header col s12 light" id='font_color'>A modern take of tracking what goes in your mouth</h5>
+    <br>
+    <div>
+        <% if current_user == nil %>
+          <a><%= link_to "Signup", new_user_path(@user), :class => 'waves-effect waves-light btn-large' %></a>
+          <a><%= link_to "Login", '/sign_in', :class => 'waves-effect waves-light btn-large' %></a>
+        <% else %>
+          <div class="row center">
+            <a href="/food/search" class="btn-large waves-effect waves-light teal lighten-1">Nom Nom Time</a>
+          </div>
+        <%end%>
+    </div>
+
+    </div>
+  </div>
+  <br>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Speeds up weight gain or weight loss</h5>
+
+            <p class="light">We help you find what you're eating and calculate the time you need to burn it for you.</p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Plug and Play</h5>
+
+            <p class="light">Just Plug In Your Measurements. Simple as that ^_^V</p>
+            <div class="center-align">
+              <%if current_user != nil%>
+                <a><%= link_to "Community", "/users", :class => 'waves-effect waves-light btn-large center' %></a>
+              <%end%>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing unique algorithms and formulas, we are able to calculate with 99.99997% accuracy based on your provided body measurements. </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Contact Us</h4>
+          <p class="left-align light">Please Don't Call us or Email Us. We Will not respond. Remember, it's only 0.00003% inaccurate.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://github.com/byfyang">@Yangster</a>
+      </div>
+    </div>
+  </footer>
+
+

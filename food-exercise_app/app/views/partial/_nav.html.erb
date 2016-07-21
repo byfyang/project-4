@@ -1,0 +1,21 @@
+<nav class=" light-blue lighten-2 z-depth-4">
+  <div class="nav-wrapper" >
+    <% if current_user != nil %>
+      <a href="/food/search" class="brand-logo">What's Next?</a>
+      <%else%>
+      <a class="brand-logo">Noms?</a>
+    <%end%>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if current_user != nil %>
+        <li><%=link_to "Home", '/', :class => "waves-effect waves-light btn"%></li>
+        <li ><%= link_to @current_user.first_name, user_path(current_user), :class => "waves-effect waves-light btn"%></li>
+        <li ><%= link_to "Logout", '/sessions', method: :delete, :class => "waves-effect waves-light btn" %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+

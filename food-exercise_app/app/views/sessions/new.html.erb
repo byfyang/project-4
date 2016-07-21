@@ -1,0 +1,17 @@
+<h3>Sign In</h3>
+
+<div id='sign_in'>
+	
+	<%= form_for @user, url: "/sessions", method: "post" do |f| %>
+	  <p><i class="tiny material-icons">email</i>
+	    <%=f.text_field :email, placeholder: "Email" %>
+	  </p>
+	  <div>
+	    <%= f.password_field :password, placeholder: "Password" %>
+	  </div>
+	  <div class="waves-effect waves-light btn">
+	  <%= f.submit "Sign In" %>
+	  </div>
+	<% end %>
+
+</div>
