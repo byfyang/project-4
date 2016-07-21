@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
 
-	before_action :require_login
+	# before_action :require_login
 	
 	def search_page
 		render :search
@@ -57,6 +57,7 @@ class FoodsController < ApplicationController
 		 end
 	end
 
+	###delete user added food###
 	def destroy
 		@food = Food.find(params[:id])
 		@food.destroy

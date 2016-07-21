@@ -26,41 +26,45 @@
 	    	<%= text_field_tag "food[time]", @time_running, hidden: true %> 
       <td><%=@time_running.round%> mins</td>
       <td><%= submit_tag "Add", :class => "waves-effect waves-light btn"%></td>
-      	<%end%>
+      <%end%>
     </tr>
+
     <tr>
       <td>Walking</td>
       <%= form_tag('/food/exercise_form', method: 'post') do %>
       	<%= text_field_tag "food[name]", @name, hidden: true %> 
       	<%= text_field_tag "food[calories]", @calories, hidden: true %> 
       	<%= text_field_tag "food[exercise]", @exercise ="walking", hidden: true %> 
-      	<%= text_field_tag "food[time]", @time_running, hidden: true %> 
+      	<%= text_field_tag "food[time]", @time_walking, hidden: true %> 
       <td><%=@time_walking.round%> mins</td>
       <td><%= submit_tag "Add", :class => "waves-effect waves-light btn"%></td>
       <%end%>
     </tr>
+
     <tr>
     <td>Swimming</td>
     <%= form_tag('/food/exercise_form', method: 'post') do %>
     	<%= text_field_tag "food[name]", @name, hidden: true %> 
     	<%= text_field_tag "food[calories]", @calories, hidden: true %> 
     	<%= text_field_tag "food[exercise]", @exercise ="swimming", hidden: true %> 
-    	<%= text_field_tag "food[time]", @time_running, hidden: true %> 
+    	<%= text_field_tag "food[time]", @time_swimming, hidden: true %> 
       <td><%=@time_swimming.round%> mins</td>
-      <td><%= submit_tag "Add", :class => "waves-effect waves-light btn"%></td>
+      <td><%= submit_tag "Add" %></td>
       <%end%>
     </tr>
+
     <tr>
     <td>Programming</td>
     <%= form_tag('/food/exercise_form', method: 'post') do %>
     	<%= text_field_tag "food[name]", @name, hidden: true %> 
     	<%= text_field_tag "food[calories]", @calories, hidden: true %> 
     	<%= text_field_tag "food[exercise]", @exercise ="programming", hidden: true %> 
-    	<%= text_field_tag "food[time]", @time_running, hidden: true %> 
+    	<%= text_field_tag "food[time]", @time_programming, hidden: true %> 
       <td><%=@time_programming.round%> mins</td>
       <td><%= submit_tag "Add", :class => "waves-effect waves-light btn"%></td>
       <%end%>
     </tr>
+
   </tbody>
 </table>
       

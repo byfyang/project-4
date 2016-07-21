@@ -8,13 +8,13 @@ There are currently <%= @users.length %> signed up.
 <div class="row">
 	<% @users.each do |user| %>
 		<div class="col s6">
-		  <div class="card">
+		  <div class="card large">
 		    <div class="card-image">
 		      <img src="<%= user.image_url%>" alt='user image'>
 		      <span class="card-title"><%=user.first_name%></span>
 		    </div>
 		    <div class="card-content">
-		      <p></p>
+		      <p><%=user.description%></p>
 		    </div>
 		    <div class="card-action">
 		      <a><%= link_to "My Profile", "/users/#{user.id}"%></a>
