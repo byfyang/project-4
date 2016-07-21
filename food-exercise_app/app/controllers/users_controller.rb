@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
 	before_action :require_login, :except => [:new, :create, :home]
-	# before_action :current_profile?, only:[:edit] 
+	before_action :current_profile?, :only => [:edit] 
+
 	def user_params
 	  params.require(:user).permit(:first_name, :last_name, :gender, :weight, :email, :password, :height, :age, :image_url, :description)
 	end

@@ -1,9 +1,9 @@
 class FoodsController < ApplicationController
 
-	# before_action :require_login
+	before_action :require_login
 	
 	def search_page
-		render :search
+		render :search_page
 	end
 
 	###API usage###
@@ -14,7 +14,7 @@ class FoodsController < ApplicationController
 
 		@result_array = result["hits"]
 		# p @result_array
-		render :search
+		render :search_page
 	end
 
 	###pass selected food params and calculate time needed to burn calories###
@@ -63,8 +63,5 @@ class FoodsController < ApplicationController
 		@food.destroy
 		redirect_to "/users/#{current_user.id}"
 	end
-
-
-
 
 end

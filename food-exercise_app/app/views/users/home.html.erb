@@ -1,32 +1,25 @@
-<body>
 
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">Know What You Eat</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">A modern take of tracking what goes in your mouth</h5>
-          <br>
-          <div>
-              <% if current_user == nil %>
-                <a><%= link_to "Signup", new_user_path(@user), :class => 'waves-effect waves-light btn-large' %></a>
-                <a><%= link_to "Login", '/sign_in', :class => 'waves-effect waves-light btn-large' %></a>
-              <% else %>
-                <div class="row center">
-                  <a href="/food/search" class="btn-large waves-effect waves-light teal lighten-1">Nom Nom Time</a>
-                </div>
-              <%end%>
+
+<div id="picture">
+  <br>
+  <h1 class="header center" id='font_color2'>Know What You Eat</h1>
+  <div class="row center">
+    <h5 class="header col s12 light" id='font_color'>A modern take of tracking what goes in your mouth</h5>
+    <br>
+    <div>
+        <% if current_user == nil %>
+          <a><%= link_to "Signup", new_user_path(@user), :class => 'waves-effect waves-light btn-large' %></a>
+          <a><%= link_to "Login", '/sign_in', :class => 'waves-effect waves-light btn-large' %></a>
+        <% else %>
+          <div class="row center">
+            <a href="/food/search" class="btn-large waves-effect waves-light teal lighten-1">Nom Nom Time</a>
           </div>
-
-          </div>
-        </div>
-        <br><br>
-
-      </div>
+        <%end%>
     </div>
-    <div id="parallax1"></div>
+
+    </div>
   </div>
+  <br>
 
 
   <div class="container">
@@ -42,6 +35,19 @@
             <p class="light">We help you find what you're eating and calculate the time you need to burn it for you.</p>
           </div>
         </div>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Plug and Play</h5>
+
+            <p class="light">Just Plug In Your Measurements. Simple as that ^_^V</p>
+            <div class="center-align">
+              <%if current_user != nil%>
+                <a><%= link_to "Community", "/users", :class => 'waves-effect waves-light btn-large center' %></a>
+              <%end%>
+            </div>
+          </div>
+        </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
@@ -50,35 +56,12 @@
 
             <p class="light">By utilizing unique algorithms and formulas, we are able to calculate with 99.99997% accuracy based on your provided body measurements. </p>
           </div>
-          <div>
-            <%if current_user != nil%>
-              <a><%= link_to "Community", "/users", :class => 'waves-effect waves-light btn-large' %></a>
-            <%end%>
-          </div>
         </div>
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Plug and Play</h5>
-
-            <p class="light">Just Plug In Your Measurements.</p>
-          </div>
-        </div>
       </div>
 
     </div>
 
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-
-        </div>
-      </div>
-    </div>
-    <div id="parallax2"></div>
-  </div>
 
   <div class="container">
     <div class="section">
@@ -96,9 +79,9 @@
 
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">@Yangster</a>
+      Made by <a class="brown-text text-lighten-3" href="http://github.com/byfyang">@Yangster</a>
       </div>
     </div>
   </footer>
-  </body>
+
 

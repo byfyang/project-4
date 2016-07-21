@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   post '/food/exercise_form', to: 'foods#create', as: 'new_food'
 
+  delete '/food/:id', to: 'foods#destroy', as: 'delete'
+
 ###users
   patch '/users/:id/edit', to: 'users#update'
 

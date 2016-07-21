@@ -48,6 +48,7 @@
           <td><%= food.calories%> </td>
           <td><%= food.exercise %></td>
           <td><%= food.time %> </td>
+          <td><%= button_to "X", delete_path(food.id), :method => :delete, data: {confirm: "Did you REALLY burn it off???"}, :class => "waves-effect waves-light btn" %></td>
         </tr>
         <%end%>
       </tbody>
