@@ -1,27 +1,16 @@
 Rails.application.routes.draw do
 
-  #home page
+###home page
   get '/', to: 'users#home', as: 'home'
 
-###sessions
+###sessions###
   get '/sign_in', to: 'sessions#new'
 
   post '/sessions', to: 'sessions#create'
 
   delete '/sessions', to: 'sessions#destroy'
 
-# ###users
-#   get "/users", to: "users#index", as: "users"
-
-#   get "/users/new", to: "users#new", as: "new_user"
-
-#   post "/users", to: "users#create"
-
-#   get "/users/:id", to: "users#show
-  patch '/users/:id/edit', to: 'users#update'
-
-
-###search###
+###food###
   get '/food/search', to: 'foods#search_page'
 
   post '/food/search', to: 'foods#search_result'
@@ -30,7 +19,9 @@ Rails.application.routes.draw do
 
   post '/food/exercise_form', to: 'foods#create', as: 'new_food'
 
+###users
+  patch '/users/:id/edit', to: 'users#update'
 
-  resources :users, :exercises
+  resources :users
 
 end

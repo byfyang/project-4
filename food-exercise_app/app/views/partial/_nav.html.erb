@@ -1,11 +1,15 @@
-<nav class=" cyan lighten-4">
+<nav class="cyan lighten-1 z-depth-4">
   <div class="nav-wrapper" >
-    <a href="/food/search" class="brand-logo">Search The Nommmssss</a>
+    <% if current_user != nil %>
+      <a href="/food/search" class="brand-logo">Search The Nommmssss</a>
+      <%else%>
+      <a class="brand-logo">Noms?</a>
+    <%end%>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if current_user != nil %>
-        <li><%=link_to "Home", '/'%>
-        <li class ='black-text' ><%= link_to "Profile", user_path(current_user)%>
-        <li class = 'black-text' ><%= link_to "Logout", '/sessions', method: :delete %></li>
+        <li><%=link_to "Home", '/', :class => "waves-effect waves-light btn"%></li>
+        <li ><%= link_to "Profile", user_path(current_user), :class => "waves-effect waves-light btn"%></li>
+        <li ><%= link_to "Logout", '/sessions', method: :delete, :class => "waves-effect waves-light btn" %></li>
       <% end %>
     </ul>
   </div>

@@ -1,9 +1,9 @@
 <h3>What's Your Heart's Desire?</h3>
-
+<br>
 <div id='search_page'>
 <%= form_tag( method: 'get') do %>
 <%= text_field_tag :search, params[:search], placeholder: "What's your Desire?" %>
-<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i><%= submit_tag "Search" %></a>
+<a><%= submit_tag "Search", :class => "waves-effect waves-light btn" %></a>
 
 <% end %>
 </div>

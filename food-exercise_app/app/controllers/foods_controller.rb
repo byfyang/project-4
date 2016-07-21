@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+
+	before_action :require_login
 	
 	def search_page
 		render :search
@@ -27,20 +29,21 @@ class FoodsController < ApplicationController
 		if current_user.gender = 'male'
 		@time_running = foodCal.to_f * 4.184 / ( (current_user.age * 0.2017) - (current_user.weight * 0.09036) + (148 * 0.6309) - 55.0969 )
 		
-		@time_walking = foodCal.to_f / 5 / (150 * 0.45392) * 60
+		@time_walking = foodCal.to_f / 5 / (current_user.weight * 0.45392) * 60
 		
-		@time_swimming = foodCal.to_f / 9.8 / (150 * 0.45392) * 60
+		@time_swimming = foodCal.to_f / 9.8 / (current_user.weight * 0.45392) * 60
+
+		@time_programming = foodCal.to_f / 1.8 / (current_user.weight * 0.45392) * 60
 		
 			elsif current_user.gender ='female'
 				@time_running = foodCal.to_f * 4.184 / ( (current_user.age * 0.074) - (current_user.weight * 0.05741) + (148 * 0.4472) - 20.4022 )
-				# p @time
+				
+				@time_walking = foodCal.to_f / 5 / (current_user.weight * 0.45392) * 60
+				
+				@time_swimming = foodCal.to_f / 9.8 / (current_user.weight * 0.45392) * 60
 
-				@time_walking = foodCal.to_f / 5 / (150 * 0.45392) * 60
-				# p @time_walking
-
-				@time_swimming = foodCal.to_f / 9.8 / (150 * 0.45392) * 60
-				# p @time_swimming
-		end
+				@time_programming = foodCal.to_f / 1.8 / (current_user.weight * 0.45392) * 60
+			end
 		render :exercise
 	end
 
@@ -53,6 +56,14 @@ class FoodsController < ApplicationController
 		 	redirect_to "/users/#{current_user.id}"
 		 end
 	end
+
+	def destroy
+		@food = Food.find(params[:id])
+		@food.destroy
+		redirect_to "/users/#{current_user.id}"
+	end
+
+
 
 
 end
