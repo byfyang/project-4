@@ -1,4 +1,4 @@
-#Project 3 - Physical Therapy App
+#Project 3 - Food Exercise App
 
 ##Scope
 
