@@ -33,6 +33,9 @@ class FoodsController < ApplicationController
 		
 		@time_swimming = foodCal.to_f / 9.8 / (current_user.weight * 0.45392) * 60
 
+		# @time_swimming =(foodCal.to_f + 95.7735 - (0.271*current_user.age) - (0.394 * current_user.weight * 0.45392) - (0.404*38)) *0.634
+		# p @time_swimming
+
 		@time_programming = foodCal.to_f / 1.8 / (current_user.weight * 0.45392) * 60
 		
 			elsif current_user.gender ='female'
