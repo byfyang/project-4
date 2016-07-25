@@ -23,7 +23,7 @@ We'll have 2 models: users and foods. User has a one to many relationship with f
 
 [Wireframes] https://drive.google.com/open?id=0Bz1tPMRXifA4eXJlaVNCdUZBcTg
 
-[Modes] https://drive.google.com/open?id=0Bz1tPMRXifA4RUtfQ1MzRUpIMjg
+[Model] https://drive.google.com/open?id=0Bz1tPMRXifA4RUtfQ1MzRUpIMjg
 
 ##Future
 * I plan on adding D3 so a user can track the their weight over time. 
