@@ -14,7 +14,7 @@ We'll have 2 models: users and foods. User has a one to many relationship with f
 
 ##Technologies Used
 * Upload-Care
-* Validation, Authorization, Authentication
+* Authorization, Authentication
 * JS/Jquery for front-end
 * Nutritionix API
 * Rails/Ruby
