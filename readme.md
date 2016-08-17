@@ -1,5 +1,6 @@
 #Project 4 - Food Exercise App
 [App Link] https://food-exercise-app.herokuapp.com/
+Log-in info: b@gmail.com / password
 
 ##Scope
 
